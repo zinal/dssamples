@@ -1,0 +1,655 @@
+BEGIN HEADER
+   CharacterSet "CP1251"
+   ExportingTool "IBM InfoSphere DataStage Export"
+   ToolVersion "8"
+   ServerName "ISWRK01"
+   ToolInstanceID "ANALYZERPROJECT"
+   MDISVersion "1.0"
+   Date "2021-08-31"
+   Time "11.30.40"
+   ServerVersion "11.7"
+END HEADER
+BEGIN DSJOB
+   Identifier "xmldemo1"
+   DateModified "2021-08-31"
+   TimeModified "11.30.06"
+   BEGIN DSRECORD
+      Identifier "ROOT"
+      OLEType "CJobDefn"
+      Readonly "0"
+      Name "xmldemo1"
+      NextID "1"
+      Container "V0"
+      JobVersion "56.0.0"
+      ControlAfterSubr "0"
+      Parameters "CParameters"
+      BEGIN DSSUBRECORD
+         Name "FILE_IN"
+         Prompt "Input file path"
+         Default "C:\\Temp\\xmldemo1\\input.txt"
+         ParamType "4"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "FILE_OUT"
+         Prompt "Output file path"
+         Default "C:\\Temp\\xmldemo1\\output.xml"
+         ParamType "4"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      MetaBag "CMetaProperty"
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "AdvancedRuntimeOptions"
+         Value "#DSProjectARTOptions#"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "TraceMode"
+         Value "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "TraceSeq"
+         Value "1"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "TraceRecords"
+         Value "100"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "TraceSkip"
+         Value "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "TracePeriod"
+         Value "1"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "RecordJobPerformanceData"
+         Value "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "IdentList"
+         Value "Sequential_File_0|XML_Output_1"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "EncOrpheusParam"
+         Name "FILE_OUT"
+         Value "DSCAPIOP_FILE_OUT"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "ClientCodePage"
+         Value "1251"
+      END DSSUBRECORD
+      NULLIndicatorPosition "0"
+      IsTemplate "0"
+      NLSLocale ",,,,"
+      JobType "3"
+      Category "\\Jobs\\xmldemo"
+      CenturyBreakYear "30"
+      NextAliasID "2"
+      ParameterFileDDName "DD00001"
+      ReservedWordCheck "1"
+      TransactionSize "0"
+      ValidationStatus "0"
+      Uploadable "0"
+      PgmCustomizationFlag "0"
+      JobReportFlag "0"
+      AllowMultipleInvocations "0"
+      Act2ActOverideDefaults "0"
+      Act2ActEnableRowBuffer "0"
+      Act2ActUseIPC "0"
+      Act2ActBufferSize "0"
+      Act2ActIPCTimeout "0"
+      ExpressionSemanticCheckFlag "0"
+      TraceOption "0"
+      EnableCacheSharing "0"
+      RuntimeColumnPropagation "0"
+      RelStagesInJobStatus "-1"
+      WebServiceEnabled "0"
+      MFProcessMetaData "0"
+      MFProcessMetaDataXMLFileExchangeMethod "0"
+      IMSProgType "0"
+      CopyLibPrefix "ARDT"
+      RecordPerformanceResults "0"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0"
+      OLEType "CContainerView"
+      Readonly "0"
+      Name "Job"
+      NextID "1"
+      IsTopLevel "0"
+      StageList "V0S0|V0S1"
+      StageXPos "144|456"
+      StageYPos "192|192"
+      StageTypes "CCustomStage|CCustomStage.XMLOutput"
+      NextStageID "3"
+      SnapToGrid "1"
+      GridLines "0"
+      ZoomValue "100"
+      StageXSize "48|48"
+      StageYSize "48|48"
+      ContainerViewSizing "0000 0000 1591 0592 0000 0000 0000 0000"
+      StageNames "Sequential_File_0|XML_Output_1"
+      StageTypeIDs "PxSequentialFile|XMLOutputPX"
+      LinkNames "DSLink2| "
+      LinkHasMetaDatas "True| "
+      LinkTypes "1| "
+      LinkNamePositionXs "324| "
+      LinkNamePositionYs "216| "
+      TargetStageIDs "V0S1| "
+      SourceStageEffectiveExecutionModes "1| "
+      SourceStageRuntimeExecutionModes "1| "
+      TargetStageEffectiveExecutionModes "1| "
+      TargetStageRuntimeExecutionModes "1| "
+      LinkIsSingleOperatorLookup "False| "
+      LinkIsSortSequential "False| "
+      LinkSortMode "0| "
+      LinkPartColMode "1| "
+      LinkSourcePinIDs "V0S0P1| "
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S0"
+      OLEType "CCustomStage"
+      Readonly "0"
+      Name "Sequential_File_0"
+      NextID "2"
+      OutputPins "V0S0P1"
+      StageType "PxSequentialFile"
+      AllowColumnMapping "0"
+      NextRecordID "0"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S0P1"
+      OLEType "CCustomOutput"
+      Readonly "0"
+      Name "DSLink2"
+      Partner "V0S1|V0S1P1"
+      Properties "CCustomProperty"
+      BEGIN DSSUBRECORD
+         Name "schema"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "selection"
+         Value "file"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "keepPartitions"
+         Value " "
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "rejects"
+         Value "continue"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "reportProgress"
+         Value "yes"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "firstLineColumnNames"
+         Value " "
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "file "
+         Value "\(2)\(2)0\(1)\(3)file \(2)#FILE_IN#\(2)0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "missingFile"
+         Value " "
+      END DSSUBRECORD
+      Columns "COutputColumn"
+      BEGIN DSSUBRECORD
+         Name "a"
+         SqlType "-5"
+         Precision "0"
+         Scale "0"
+         Nullable "0"
+         KeyPosition "0"
+         DisplaySize "0"
+         Group "0"
+         SortKey "0"
+         SortType "0"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "b"
+         SqlType "12"
+         Precision "200"
+         Scale "0"
+         Nullable "0"
+         KeyPosition "0"
+         DisplaySize "0"
+         Group "0"
+         SortKey "0"
+         SortType "0"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "c"
+         SqlType "3"
+         Precision "10"
+         Scale "2"
+         Nullable "1"
+         KeyPosition "0"
+         DisplaySize "0"
+         Group "0"
+         SortKey "0"
+         SortType "0"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      MetaBag "CMetaProperty"
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "SchemaFormat"
+         Value "final_delim=end, delim=',', quote=double"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "DiskWriteInc"
+         Value "1048576"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "BufFreeRun"
+         Value "50"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "MaxMemBufSize"
+         Value "3145728"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "QueueUpperSize"
+         Value "0"
+      END DSSUBRECORD
+      LeftTextPos "324"
+      TopTextPos "216"
+      LinkMinimised "0"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S1"
+      OLEType "CCustomStage"
+      Readonly "0"
+      Name "XML_Output_1"
+      NextID "2"
+      InputPins "V0S1P1"
+      StageType "XMLOutputPX"
+      AllowColumnMapping "0"
+      Properties "CCustomProperty"
+      BEGIN DSSUBRECORD
+         Name "output_file"
+         Value "#FILE_OUT#"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "generate_full_document"
+         Value "1"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "multi_line_output"
+         Value "1"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "indentation_character"
+         Value "\\s"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "indentation_length"
+         Value "2"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "new_line_style"
+         Value "UNIX"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "include_header"
+         Value "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "header_text"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "header"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "include_namespaces"
+         Value "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "namespace_declaration"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "generate_comment"
+         Value "1"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "include_document"
+         Value "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "document_type_text"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "document_type"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "include_xml_chunk"
+         Value "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "xml_chunk_text"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "xml_chunk"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "replace_nulls"
+         Value "1"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "discard_empty_values"
+         Value "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "empty_element_style"
+         Value "use single tag"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "output_row_generation"
+         Value "use column"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "output_row_trigger_column"
+         Value "a"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "xml_encoding"
+         Value "UTF-8"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "validate_output"
+         Value "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "enable_grammar_caching"
+         Value "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "xml_validation_level"
+         Value "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "log_reject_errors"
+         Value "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "xml_warning_mapping"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "xml_error_mapping"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "xml_fatal_mapping"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "charset"
+      END DSSUBRECORD
+      NextRecordID "0"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S1P1"
+      OLEType "CCustomInput"
+      Readonly "0"
+      Name "DSLink2"
+      Partner "V0S0|V0S0P1"
+      LinkType "1"
+      MetaBag "CMetaProperty"
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "RTColumnProp"
+         Value "0"
+      END DSSUBRECORD
+      TransactionSize "0"
+      TXNBehaviour "0"
+      EnableTxGroup "0"
+      LinkMinimised "0"
+   END DSRECORD
+END DSJOB
+BEGIN DSEXECJOB
+   Identifier "xmldemo1"
+   DateModified "1899-12-30"
+   TimeModified "00.00.01"
+   BEGIN DSRECORD
+      Identifier "xmldemo1"
+      F1 "JOB"
+      F3 "11.7///60/C"
+      F5 "FILE_IN\VFILE_OUT"
+      F6 "Input file path\VOutput file path"
+      F7 "C:\\Temp\\xmldemo1\\input.txt\VC:\\Temp\\xmldemo1\\output.xml"
+      F9 "4\V4"
+      F10 "V0"
+      F15 "PxSequentialFile\VXMLOutputPX"
+      F18 "C:\\Temp\\xmldemo1\\input.txt\VC:\\Temp\\xmldemo1\\output.xml"
+      F21 "1\V1"
+      F24 ",,,,"
+      F28 "\\Jobs\\xmldemo"
+      F29 "0"
+      F30 "0"
+      F31 "2021-08-31 11:29:06"
+      F32 "3"
+      F34 "0\V1\VWINNT\V0\V\V#DSProjectARTOptions#\V1251\V\V\V\V\V\V0\V0"
+      F35 "Sequential_File_0\VXML_Output_1"
+      F36 "iswrk01"
+      F37 "ANALYZERPROJECT"
+      F38 "0"
+      F39 "xmldemo1.Sequential_File_0\Vxmldemo1.XML_Output_1"
+      F41 "0"
+      F43 ",,,,"
+      F44 "FILE_OUT\SDSCAPIOP_FILE_OUT"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "xmldemo1.Sequential_File_0"
+      F1 "STAGE"
+      F2 "CUSTOM"
+      F3 "11.7///60/C"
+      F4 "xmldemo1"
+      F10 "xmldemo1.Sequential_File_0.DSLink2"
+      F16 "PxSequentialFile"
+      F31 "xmldemo1.Sequential_File_0"
+      F32 "-1.-1"
+      F40 "1"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "xmldemo1.Sequential_File_0.DSLink2"
+      F1 "OUTPIN"
+      F3 "11.7///60/C"
+      F5 "3"
+      F16 "xmldemo1.Sequential_File_0\Vxmldemo1.XML_Output_1"
+      F21 "a\Vb\Vc"
+      F22 "0\V0\V0"
+      F25 "-5\V12\V3"
+      F26 "0\V200\V10"
+      F27 "0\V0\V2"
+      F28 "0\V0\V0"
+      F39 "DSLink2"
+      F40 "0\V0\V1"
+      F50 "\V"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "xmldemo1.XML_Output_1"
+      F1 "STAGE"
+      F2 "CUSTOM"
+      F3 "11.7///60/C"
+      F4 "xmldemo1"
+      F9 "xmldemo1.Sequential_File_0.DSLink2"
+      F13 "output_file\Vgenerate_full_document\Vmulti_line_output\Vindentation_character\Vindentation_length\Vnew_line_style\Vinclude_header\Vheader_text\Vheader\Vinclude_namespaces\Vnamespace_declaration\Vgenerate_comment\Vinclude_document\Vdocument_type_text\Vdocument_type\Vinclude_xml_chunk\Vxml_chunk_text\Vxml_chunk\Vreplace_nulls\Vdiscard_empty_values\Vempty_element_style\Voutput_row_generation\Voutput_row_trigger_column\Vxml_encoding\Vvalidate_output\Venable_grammar_caching\Vxml_validation_level\Vlog_reject_errors\Vxml_warning_mapping\Vxml_error_mapping\Vxml_fatal_mapping\Vcharset"
+      F14 "#FILE_OUT#\V1\V1\V\\s\V2\VUNIX\V0\V\V\V0\V\V1\V0\V\V\V0\V\V\V1\V0\Vuse single tag\Vuse column\Va\VUTF-8\V0\V0\V0\V0\V\V\V\V"
+      F16 "XMLOutputPX"
+      F23 "0\V2\V2\V0\V2\V5\V2\V5\V0\V2\V0\V2\V2\V5\V0\V2\V5\V0\V2\V2\V5\V5\V0\V0\V2\V2\V2\V2\V5\V5\V5\V0"
+      F31 "xmldemo1.XML_Output_1"
+      F32 "-1.-1"
+      F40 "0"
+   END DSRECORD
+   COMMENT No program sources in executable job
+   COMMENT No program binaries in executable job
+   BEGIN DSSCRIPT
+      Identifier "OshExecuter.sh"
+      TERMINATOR =+=+=+=
+#!/bin/sh
+# Shell script for Datastage to execute an osh script, generated at 2021-08-31 11:29:06
+# Compiler runtime stamp 11.7///60/C
+#
+# Parameters:
+# $1 - Run indicator: R=normal run, P=performance wrappered run
+# $2 - Environment variable file name - dummy
+# $3... - Osh / performance checker command line arguments
+RunIndicator=$1
+DummyEnv=$2
+shift
+shift
+if test ! -x "$APT_ORCHHOME/bin/osh"
+  then echo '##OSHRETVAL NOOSH'
+  exit 1
+fi
+# Test for resource estimation option.
+if test $RunIndicator = P
+  then $APT_ORCHHOME/bin/orchresest "$@" 2>&1 &
+  else $APT_ORCHHOME/bin/osh "$@" 2>&1 &
+fi
+oshpid=$!
+# Write the pid of the conductor process
+echo '##OSHPID' $oshpid
+wait $oshpid
+oshcode=$?
+oshdir=`dirname $0`
+# Write the terminating string
+echo '##OSHRETVAL' $oshcode > $oshdir/../RT_SCTEMP/$oshpid.retval
+echo '##OSHRETVAL' $oshcode
+# end of script
+=+=+=+=
+   END DSSCRIPT
+   BEGIN DSSCRIPT
+      Identifier "OshScript.osh"
+      TERMINATOR =+=+=+=
+# OSH / orchestrate script for Job xmldemo1 compiled at 11:29:06 31 Aug 2021
+#################################################################
+#### STAGE: Sequential_File_0
+## Operator
+import
+## Operator options
+-schema record
+  {final_delim=end, delim=',', quote=double}
+(
+  a:int64;
+  b:string[max=200];
+  c:nullable decimal[10,2];
+)
+-rejects continue
+-reportProgress yes
+-file  '[&"FILE_IN"]'
+## General options
+[ident('Sequential_File_0'); jobmon_ident('Sequential_File_0')]
+## Outputs
+0> [] 'Sequential_File_0:DSLink2.v'
+;
+#################################################################
+#### STAGE: XML_Output_1
+## Operator
+dsplugin
+## Operator options
+-charset [&DSProjectMapName]
+-stageprops xmldemo1.XML_Output_1 '{
+   output_file=\\'[&"DSCAPIOP_FILE_OUT"]\\', 
+   generate_full_document=1, 
+   multi_line_output=1, 
+   indentation_character=\\'\\\\\\\\s\\', 
+   indentation_length=2, 
+   new_line_style=\\'UNIX\\', 
+   include_header=0, 
+   include_namespaces=0, 
+   generate_comment=1, 
+   include_document=0, 
+   include_xml_chunk=0, 
+   replace_nulls=1, 
+   discard_empty_values=0, 
+   empty_element_style=\\'use single tag\\', 
+   output_row_generation=\\'use column\\', 
+   output_row_trigger_column=\\'a\\', 
+   xml_encoding=\\'UTF\\-8\\', 
+   validate_output=0, 
+   enable_grammar_caching=0, 
+   xml_validation_level=0, 
+   log_reject_errors=0
+}'
+-inlinkprops 0 DSLink2 '{
+      DSTxnSize=0, 
+      DSSQLType={a=-5, b=12, c=3}, 
+      DSSQLPrecision={b=200, c=10}, 
+      DSSQLScale={c=2}, 
+      DSSchema=\\'record
+         (
+           a\\:int64\\;
+           b\\:string\\[max\\=200\\]\\;
+           c\\:nullable decimal\\[10\\,2\\]\\;
+         )\\'
+}'
+-rtlib 'xmlo.dll'
+-reslib 'xmloenu.dll'
+## General options
+[ident('XML_Output_1'); jobmon_ident('XML_Output_1')]
+## Inputs
+0< [] 'Sequential_File_0:DSLink2.v'
+;
+# End of OSH code
+=+=+=+=
+   END DSSCRIPT
+END DSEXECJOB
