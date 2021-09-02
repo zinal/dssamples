@@ -107,7 +107,7 @@ public class XmlDemo2 extends Processor {
                 break; // no more input
             writer.writeStartElement("record");
             for (int i=0; i<meta.size(); ++i) {
-                Object value = ir.getValue(i+1);
+                Object value = ir.getValue(i);
                 if (value!=null) {
                     writer.writeStartElement(meta.get(i).getName());
                     writer.writeCharacters(value.toString());
