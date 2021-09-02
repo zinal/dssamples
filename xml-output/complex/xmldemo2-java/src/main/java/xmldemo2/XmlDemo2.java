@@ -101,6 +101,7 @@ public class XmlDemo2 extends Processor {
     public void process() throws Exception {
         final List<ColumnMetadata> meta = inputLink.getColumnMetadata();
         writer.writeStartDocument("utf-8", "1.0");
+        writer.writeStartElement("output-data");
         while (true) {
             InputRecord ir = inputLink.readRecord();
             if (ir==null)
@@ -116,6 +117,7 @@ public class XmlDemo2 extends Processor {
             }
             writer.writeEndElement();
         }
+        writer.writeEndElement();
         writer.writeEndDocument();
         writer.close();
         writer = null;
