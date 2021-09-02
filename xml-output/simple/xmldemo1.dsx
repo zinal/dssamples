@@ -2,17 +2,17 @@ BEGIN HEADER
    CharacterSet "CP1251"
    ExportingTool "IBM InfoSphere DataStage Export"
    ToolVersion "8"
-   ServerName "ISWRK01"
-   ToolInstanceID "ANALYZERPROJECT"
+   ServerName "OPTIM-ENGINE.LOCAL"
+   ToolInstanceID "dstage1"
    MDISVersion "1.0"
-   Date "2021-08-31"
-   Time "11.30.40"
+   Date "2021-09-02"
+   Time "10.17.22"
    ServerVersion "11.7"
 END HEADER
 BEGIN DSJOB
    Identifier "xmldemo1"
-   DateModified "2021-08-31"
-   TimeModified "11.30.06"
+   DateModified "2021-09-02"
+   TimeModified "10.16.45"
    BEGIN DSRECORD
       Identifier "ROOT"
       OLEType "CJobDefn"
@@ -26,7 +26,7 @@ BEGIN DSJOB
       BEGIN DSSUBRECORD
          Name "FILE_IN"
          Prompt "Input file path"
-         Default "C:\\Temp\\xmldemo1\\input.txt"
+         Default "/datum/xmldemo1/input.txt"
          ParamType "4"
          ParamLength "0"
          ParamScale "0"
@@ -34,7 +34,7 @@ BEGIN DSJOB
       BEGIN DSSUBRECORD
          Name "FILE_OUT"
          Prompt "Output file path"
-         Default "C:\\Temp\\xmldemo1\\output.xml"
+         Default "/datum/xmldemo1/output.xml"
          ParamType "4"
          ParamLength "0"
          ParamScale "0"
@@ -81,14 +81,14 @@ BEGIN DSJOB
          Value "Sequential_File_0|XML_Output_1"
       END DSSUBRECORD
       BEGIN DSSUBRECORD
-         Owner "EncOrpheusParam"
-         Name "FILE_OUT"
-         Value "DSCAPIOP_FILE_OUT"
-      END DSSUBRECORD
-      BEGIN DSSUBRECORD
          Owner "APT"
          Name "ClientCodePage"
          Value "1251"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "EncOrpheusParam"
+         Name "FILE_OUT"
+         Value "DSCAPIOP_FILE_OUT"
       END DSSUBRECORD
       NULLIndicatorPosition "0"
       IsTemplate "0"
@@ -139,7 +139,7 @@ BEGIN DSJOB
       ZoomValue "100"
       StageXSize "48|48"
       StageYSize "48|48"
-      ContainerViewSizing "0000 0000 1591 0592 0000 0000 0000 0000"
+      ContainerViewSizing "0000 0000 1292 0592 0000 0001 0000 0000"
       StageNames "Sequential_File_0|XML_Output_1"
       StageTypeIDs "PxSequentialFile|XMLOutputPX"
       LinkNames "DSLink2| "
@@ -210,6 +210,7 @@ BEGIN DSJOB
       Columns "COutputColumn"
       BEGIN DSSUBRECORD
          Name "a"
+         Description "/Record/@a"
          SqlType "-5"
          Precision "0"
          Scale "0"
@@ -236,6 +237,7 @@ BEGIN DSJOB
       END DSSUBRECORD
       BEGIN DSSUBRECORD
          Name "b"
+         Description "/Record/text"
          SqlType "12"
          Precision "200"
          Scale "0"
@@ -262,6 +264,7 @@ BEGIN DSJOB
       END DSSUBRECORD
       BEGIN DSSUBRECORD
          Name "c"
+         Description "/Record/@c"
          SqlType "3"
          Precision "10"
          Scale "2"
@@ -290,7 +293,7 @@ BEGIN DSJOB
       BEGIN DSSUBRECORD
          Owner "APT"
          Name "SchemaFormat"
-         Value "final_delim=end, delim=',', quote=double"
+         Value "final_delim=end, delim=',', null_field='', quote=double"
       END DSSUBRECORD
       BEGIN DSSUBRECORD
          Owner "APT"
@@ -405,7 +408,7 @@ BEGIN DSJOB
       END DSSUBRECORD
       BEGIN DSSUBRECORD
          Name "output_row_generation"
-         Value "use column"
+         Value "all rows"
       END DSSUBRECORD
       BEGIN DSSUBRECORD
          Name "output_row_trigger_column"
@@ -474,22 +477,22 @@ BEGIN DSEXECJOB
       F3 "11.7///60/C"
       F5 "FILE_IN\VFILE_OUT"
       F6 "Input file path\VOutput file path"
-      F7 "C:\\Temp\\xmldemo1\\input.txt\VC:\\Temp\\xmldemo1\\output.xml"
+      F7 "/datum/xmldemo1/input.txt\V/datum/xmldemo1/output.xml"
       F9 "4\V4"
       F10 "V0"
       F15 "PxSequentialFile\VXMLOutputPX"
-      F18 "C:\\Temp\\xmldemo1\\input.txt\VC:\\Temp\\xmldemo1\\output.xml"
+      F18 "/datum/xmldemo1/input.txt\V/datum/xmldemo1/output.xml"
       F21 "1\V1"
       F24 ",,,,"
       F28 "\\Jobs\\xmldemo"
       F29 "0"
       F30 "0"
-      F31 "2021-08-31 11:29:06"
+      F31 "2021-09-02 10:07:48"
       F32 "3"
-      F34 "0\V1\VWINNT\V0\V\V#DSProjectARTOptions#\V1251\V\V\V\V\V\V0\V0"
+      F34 "0\V1\VLINUX\V0\V\V#DSProjectARTOptions#\V1251\V\V\V\V\V\V0\V0"
       F35 "Sequential_File_0\VXML_Output_1"
-      F36 "iswrk01"
-      F37 "ANALYZERPROJECT"
+      F36 "optim-engine.local"
+      F37 "dstage1"
       F38 "0"
       F39 "xmldemo1.Sequential_File_0\Vxmldemo1.XML_Output_1"
       F41 "0"
@@ -520,6 +523,7 @@ BEGIN DSEXECJOB
       F26 "0\V200\V10"
       F27 "0\V0\V2"
       F28 "0\V0\V0"
+      F29 "/Record/@a\V/Record/text\V/Record/@c"
       F39 "DSLink2"
       F40 "0\V0\V1"
       F50 "\V"
@@ -532,7 +536,7 @@ BEGIN DSEXECJOB
       F4 "xmldemo1"
       F9 "xmldemo1.Sequential_File_0.DSLink2"
       F13 "output_file\Vgenerate_full_document\Vmulti_line_output\Vindentation_character\Vindentation_length\Vnew_line_style\Vinclude_header\Vheader_text\Vheader\Vinclude_namespaces\Vnamespace_declaration\Vgenerate_comment\Vinclude_document\Vdocument_type_text\Vdocument_type\Vinclude_xml_chunk\Vxml_chunk_text\Vxml_chunk\Vreplace_nulls\Vdiscard_empty_values\Vempty_element_style\Voutput_row_generation\Voutput_row_trigger_column\Vxml_encoding\Vvalidate_output\Venable_grammar_caching\Vxml_validation_level\Vlog_reject_errors\Vxml_warning_mapping\Vxml_error_mapping\Vxml_fatal_mapping\Vcharset"
-      F14 "#FILE_OUT#\V1\V1\V\\s\V2\VUNIX\V0\V\V\V0\V\V1\V0\V\V\V0\V\V\V1\V0\Vuse single tag\Vuse column\Va\VUTF-8\V0\V0\V0\V0\V\V\V\V"
+      F14 "#FILE_OUT#\V1\V1\V\\s\V2\VUNIX\V0\V\V\V0\V\V1\V0\V\V\V0\V\V\V1\V0\Vuse single tag\Vall rows\Va\VUTF-8\V0\V0\V0\V0\V\V\V\V"
       F16 "XMLOutputPX"
       F23 "0\V2\V2\V0\V2\V5\V2\V5\V0\V2\V0\V2\V2\V5\V0\V2\V5\V0\V2\V2\V5\V5\V0\V0\V2\V2\V2\V2\V5\V5\V5\V0"
       F31 "xmldemo1.XML_Output_1"
@@ -545,7 +549,7 @@ BEGIN DSEXECJOB
       Identifier "OshExecuter.sh"
       TERMINATOR =+=+=+=
 #!/bin/sh
-# Shell script for Datastage to execute an osh script, generated at 2021-08-31 11:29:06
+# Shell script for Datastage to execute an osh script, generated at 2021-09-02 10:07:48
 # Compiler runtime stamp 11.7///60/C
 #
 # Parameters:
@@ -580,14 +584,14 @@ echo '##OSHRETVAL' $oshcode
    BEGIN DSSCRIPT
       Identifier "OshScript.osh"
       TERMINATOR =+=+=+=
-# OSH / orchestrate script for Job xmldemo1 compiled at 11:29:06 31 Aug 2021
+# OSH / orchestrate script for Job xmldemo1 compiled at 10:07:48 02 Sep 2021
 #################################################################
 #### STAGE: Sequential_File_0
 ## Operator
 import
 ## Operator options
 -schema record
-  {final_delim=end, delim=',', quote=double}
+  {final_delim=end, delim=',', null_field='', quote=double}
 (
   a:int64;
   b:string[max=200];
@@ -604,7 +608,7 @@ import
 #################################################################
 #### STAGE: XML_Output_1
 ## Operator
-dsplugin
+dscapiop
 ## Operator options
 -charset [&DSProjectMapName]
 -stageprops xmldemo1.XML_Output_1 '{
@@ -622,7 +626,7 @@ dsplugin
    replace_nulls=1, 
    discard_empty_values=0, 
    empty_element_style=\\'use single tag\\', 
-   output_row_generation=\\'use column\\', 
+   output_row_generation=\\'all rows\\', 
    output_row_trigger_column=\\'a\\', 
    xml_encoding=\\'UTF\\-8\\', 
    validate_output=0, 
@@ -632,6 +636,7 @@ dsplugin
 }'
 -inlinkprops 0 DSLink2 '{
       DSTxnSize=0, 
+      DSDescription={a=\\'\\/Record\\/\\@a\\', b=\\'\\/Record\\/text\\', c=\\'\\/Record\\/\\@c\\'}, 
       DSSQLType={a=-5, b=12, c=3}, 
       DSSQLPrecision={b=200, c=10}, 
       DSSQLScale={c=2}, 
@@ -642,8 +647,8 @@ dsplugin
            c\\:nullable decimal\\[10\\,2\\]\\;
          )\\'
 }'
--rtlib 'xmlo.dll'
--reslib 'xmloenu.dll'
+-rtlib 'xmlo.so'
+-reslib 'xmloenu.so'
 ## General options
 [ident('XML_Output_1'); jobmon_ident('XML_Output_1')]
 ## Inputs
