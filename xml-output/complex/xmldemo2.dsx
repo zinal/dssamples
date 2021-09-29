@@ -1,0 +1,664 @@
+BEGIN HEADER
+   CharacterSet "CP1251"
+   ExportingTool "IBM InfoSphere DataStage Export"
+   ToolVersion "8"
+   ServerName "OPTIM-ENGINE.LOCAL"
+   ToolInstanceID "dstage1"
+   MDISVersion "1.0"
+   Date "2021-09-02"
+   Time "12.16.58"
+   ServerVersion "11.7"
+END HEADER
+BEGIN DSJOB
+   Identifier "xmldemo2"
+   DateModified "2021-09-02"
+   TimeModified "12.15.34"
+   BEGIN DSRECORD
+      Identifier "ROOT"
+      OLEType "CJobDefn"
+      Readonly "0"
+      Name "xmldemo2"
+      NextID "1"
+      Container "V0"
+      JobVersion "56.0.0"
+      ControlAfterSubr "0"
+      Parameters "CParameters"
+      BEGIN DSSUBRECORD
+         Name "FILE_IN"
+         Prompt "Input file path"
+         Default "/datum/xmldemo2/input.txt"
+         ParamType "4"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "FILE_OUT"
+         Prompt "Output file path"
+         Default "/datum/xmldemo2/output.xml"
+         ParamType "4"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "FILE_JAR"
+         Prompt "Path to JAR file"
+         Default "/datum/xmldemo2/xmldemo2-java-1.0-SNAPSHOT.jar"
+         ParamType "4"
+         ParamLength "0"
+         ParamScale "0"
+      END DSSUBRECORD
+      MetaBag "CMetaProperty"
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "AdvancedRuntimeOptions"
+         Value "#DSProjectARTOptions#"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "TraceMode"
+         Value "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "TraceSeq"
+         Value "1"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "TraceRecords"
+         Value "100"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "TraceSkip"
+         Value "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "TracePeriod"
+         Value "1"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "RecordJobPerformanceData"
+         Value "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "IdentList"
+         Value "Sequential_File_0|Java_Integration_3"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "ClientCodePage"
+         Value "1251"
+      END DSSUBRECORD
+      NULLIndicatorPosition "0"
+      IsTemplate "0"
+      NLSLocale ",,,,"
+      JobType "3"
+      Category "\\Jobs\\xmldemo"
+      CenturyBreakYear "30"
+      NextAliasID "2"
+      ParameterFileDDName "DD00001"
+      ReservedWordCheck "1"
+      TransactionSize "0"
+      ValidationStatus "0"
+      Uploadable "0"
+      PgmCustomizationFlag "0"
+      JobReportFlag "0"
+      AllowMultipleInvocations "0"
+      Act2ActOverideDefaults "0"
+      Act2ActEnableRowBuffer "0"
+      Act2ActUseIPC "0"
+      Act2ActBufferSize "0"
+      Act2ActIPCTimeout "0"
+      ExpressionSemanticCheckFlag "0"
+      TraceOption "0"
+      EnableCacheSharing "0"
+      RuntimeColumnPropagation "0"
+      RelStagesInJobStatus "-1"
+      WebServiceEnabled "0"
+      MFProcessMetaData "0"
+      MFProcessMetaDataXMLFileExchangeMethod "0"
+      IMSProgType "0"
+      CopyLibPrefix "ARDT"
+      RecordPerformanceResults "0"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0"
+      OLEType "CContainerView"
+      Readonly "0"
+      Name "Job"
+      NextID "1"
+      IsTopLevel "0"
+      StageList "V0S0|V0S3"
+      StageXPos "144|456"
+      StageYPos "192|192"
+      StageTypes "CCustomStage|CCustomStage.CC_GUI"
+      NextStageID "5"
+      SnapToGrid "1"
+      GridLines "0"
+      ZoomValue "100"
+      StageXSize "48|48"
+      StageYSize "48|48"
+      ContainerViewSizing "0000 0000 1292 0592 0000 0001 0000 0000"
+      StageNames "Sequential_File_0|Java_Integration_3"
+      StageTypeIDs "PxSequentialFile|JavaStagePX"
+      LinkNames "DSLink2| "
+      LinkHasMetaDatas "True| "
+      LinkTypes "1| "
+      LinkNamePositionXs "324| "
+      LinkNamePositionYs "216| "
+      TargetStageIDs "V0S3| "
+      SourceStageEffectiveExecutionModes "1| "
+      SourceStageRuntimeExecutionModes "1| "
+      TargetStageEffectiveExecutionModes "1| "
+      TargetStageRuntimeExecutionModes "1| "
+      LinkIsSingleOperatorLookup "False| "
+      LinkIsSortSequential "False| "
+      LinkSortMode "0| "
+      LinkPartColMode "1| "
+      LinkSourcePinIDs "V0S0P1| "
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S0"
+      OLEType "CCustomStage"
+      Readonly "0"
+      Name "Sequential_File_0"
+      NextID "2"
+      OutputPins "V0S0P1"
+      StageType "PxSequentialFile"
+      AllowColumnMapping "0"
+      NextRecordID "0"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S0P1"
+      OLEType "CCustomOutput"
+      Readonly "0"
+      Name "DSLink2"
+      Partner "V0S3|V0S3P1"
+      Properties "CCustomProperty"
+      BEGIN DSSUBRECORD
+         Name "schema"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "selection"
+         Value "file"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "keepPartitions"
+         Value " "
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "rejects"
+         Value "continue"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "reportProgress"
+         Value "yes"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "firstLineColumnNames"
+         Value " "
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "file "
+         Value "\(2)\(2)0\(1)\(3)file \(2)#FILE_IN#\(2)0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "missingFile"
+         Value " "
+      END DSSUBRECORD
+      Columns "COutputColumn"
+      BEGIN DSSUBRECORD
+         Name "a"
+         Description "/Record/@a"
+         SqlType "-5"
+         Precision "0"
+         Scale "0"
+         Nullable "0"
+         KeyPosition "0"
+         DisplaySize "0"
+         Group "0"
+         SortKey "0"
+         SortType "0"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "b"
+         Description "/Record/text"
+         SqlType "12"
+         Precision "200"
+         Scale "0"
+         Nullable "0"
+         KeyPosition "0"
+         DisplaySize "0"
+         Group "0"
+         SortKey "0"
+         SortType "0"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "c"
+         Description "/Record/@c"
+         SqlType "3"
+         Precision "10"
+         Scale "2"
+         Nullable "1"
+         KeyPosition "0"
+         DisplaySize "0"
+         Group "0"
+         SortKey "0"
+         SortType "0"
+         AllowCRLF "0"
+         LevelNo "0"
+         Occurs "0"
+         PadNulls "0"
+         SignOption "0"
+         SortingOrder "0"
+         ArrayHandling "0"
+         SyncIndicator "0"
+         PadChar ""
+         ExtendedPrecision "0"
+         TaggedSubrec "0"
+         OccursVarying "0"
+         PKeyIsCaseless "0"
+         SCDPurpose "0"
+      END DSSUBRECORD
+      MetaBag "CMetaProperty"
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "SchemaFormat"
+         Value "final_delim=end, delim=',', null_field='', quote=double"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "DiskWriteInc"
+         Value "1048576"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "BufFreeRun"
+         Value "50"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "MaxMemBufSize"
+         Value "3145728"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "QueueUpperSize"
+         Value "0"
+      END DSSUBRECORD
+      LeftTextPos "324"
+      TopTextPos "216"
+      LinkMinimised "0"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S3"
+      OLEType "CCustomStage"
+      Readonly "0"
+      Name "Java_Integration_3"
+      NextID "2"
+      InputPins "V0S3P1"
+      StageType "JavaStagePX"
+      AllowColumnMapping "0"
+      Properties "CCustomProperty"
+      BEGIN DSSUBRECORD
+         Name "VariantName"
+         Value "1.6"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "VariantLibrary"
+         Value "\"java:com/ibm/is/cc/javastage/connector/CC_JavaConnectorLibrary,$(DSHOME)/../DSComponents/bin/ccjava-api.jar;$(DSHOME)/../DSComponents/bin/ccjava.jar;$(DSHOME)\""
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "VariantVersion"
+         Value "1.0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "SupportedVariants"
+         Value "V1;1.6::\"java:com/ibm/is/cc/javastage/connector/CC_JavaConnectorLibrary,$(DSHOME)/../DSComponents/bin/ccjava-api.jar;$(DSHOME)/../DSComponents/bin/ccjava.jar;$(DSHOME)\""
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "SupportedVariantsLibraries"
+         Value "\"java:com/ibm/is/cc/javastage/connector/CC_JavaConnectorLibrary,$(DSHOME)/../DSComponents/bin/ccjava-api.jar;$(DSHOME)/../DSComponents/bin/ccjava.jar;$(DSHOME)\""
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "SupportedVariantsVersions"
+         Value "1.0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "Orientation"
+         Value "stage"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "RejectFromLink"
+         Value "-1"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "RejectThreshold"
+         Value "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "RejectNumber"
+         Value "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "RejectUsesPercentage"
+         Value "false"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "ConnectorName"
+         Value "JavaStage"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "Engine"
+         Value "EE"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "Context"
+         Value "target"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "ConnectionString"
+         Value "/Connection/Reserved"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "Username"
+         Value "/Connection/Reserved"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "Password"
+         Value "/Connection/Reserved"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "Classpath"
+         Value "/Usage/Java/Classpath"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "ConnectorClasspath"
+         Value "/Usage/Java/ConnectorClasspath"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "XMLProperties"
+         Value "<?xml version='1.0' encoding='UTF-16'?><Properties version='1.1'><Common><Context type='int'>2</Context><Variant type='string'>1.6</Variant><DescriptorVersion type='string'>1.0</DescriptorVersion><PartitionType type='int'>-1</PartitionType><RCP type='int'>0</RCP></Common><Usage><Java><Classpath modified='1' type='string'><![CDATA[#FILE_JAR#]]></Classpath><HeapSize modified='1' type='int'><![CDATA[512]]></HeapSize><ConnectorClasspath type='string'><![CDATA[$(DSHOME)/../DSComponents/bin/ccjava-api.jar;$(DSHOME)/../DSComponents/bin/ccjava.jar]]></ConnectorClasspath><OtherOptions modified='1' type='string'><![CDATA[-Xdump:none]]></OtherOptions><ConnectorOtherOptions type='string'><![CDATA[-Dcom.ibm.tools.attach.enable=no -Dcom.ibm.is.cc.options=noisfjars]]></ConnectorOtherOptions></Java><UserClassName modified='1' type='string'><![CDATA[xmldemo2.XmlDemo2]]></UserClassName><UserDefinedFunction collapsed='1' type='bool'><![CDATA[0]]></UserDefinedFunction><CustomProperties modified='1' type='string'><![CDATA[OUT_FILE=#FILE_OUT#]]></CustomProperties></Usage></Properties >"
+      END DSSUBRECORD
+      MetaBag "CMetaProperty"
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "Execmode"
+         Value "seq"
+      END DSSUBRECORD
+      NextRecordID "0"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "V0S3P1"
+      OLEType "CCustomInput"
+      Readonly "0"
+      Name "DSLink2"
+      Partner "V0S0|V0S0P1"
+      LinkType "1"
+      ConditionNotMet "fail"
+      LookupFail "fail"
+      Properties "CCustomProperty"
+      BEGIN DSSUBRECORD
+         Name "VariantName"
+         Value "1.6"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "VariantLibrary"
+         Value "\"java:com/ibm/is/cc/javastage/connector/CC_JavaConnectorLibrary,$(DSHOME)/../DSComponents/bin/ccjava-api.jar;$(DSHOME)/../DSComponents/bin/ccjava.jar;$(DSHOME)\""
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "VariantVersion"
+         Value "1.0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "RejectFromLink"
+         Value "-1"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "RejectThreshold"
+         Value "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "RejectNumber"
+         Value "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "RejectUsesPercentage"
+         Value "false"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "ConnectorName"
+         Value "JavaStage"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "XMLProperties"
+         Value "<?xml version='1.0' encoding='UTF-16'?><Properties version='1.1'><Common><Context type='int'>2</Context><Variant type='string'>1.6</Variant><DescriptorVersion type='string'>1.0</DescriptorVersion><PartitionType type='int'>2</PartitionType><RCP type='int'>0</RCP><Reject></Reject></Common><Usage></Usage></Properties >"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Name "Context"
+         Value "target"
+      END DSSUBRECORD
+      MetaBag "CMetaProperty"
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "RTColumnProp"
+         Value "0"
+      END DSSUBRECORD
+      BEGIN DSSUBRECORD
+         Owner "APT"
+         Name "SeqSort"
+         Value "0"
+      END DSSUBRECORD
+      TransactionSize "0"
+      TXNBehaviour "40"
+      EnableTxGroup "0"
+      LinkMinimised "0"
+   END DSRECORD
+END DSJOB
+BEGIN DSEXECJOB
+   Identifier "xmldemo2"
+   DateModified "1899-12-30"
+   TimeModified "00.00.01"
+   BEGIN DSRECORD
+      Identifier "xmldemo2"
+      F1 "JOB"
+      F3 "11.7///60/C"
+      F5 "FILE_IN\VFILE_OUT\VFILE_JAR"
+      F6 "Input file path\VOutput file path\VPath to JAR file"
+      F7 "/datum/xmldemo2/input.txt\V/datum/xmldemo2/output.xml\V/datum/xmldemo2/xmldemo2-java-1.0-SNAPSHOT.jar"
+      F9 "4\V4\V4"
+      F10 "V0"
+      F15 "JavaStagePX\VPxSequentialFile"
+      F18 "/datum/xmldemo2/input.txt\V/datum/xmldemo2/output.xml\V/datum/xmldemo2/xmldemo2-java-1.0-SNAPSHOT.jar"
+      F21 "1\V1\V1"
+      F24 ",,,,"
+      F28 "\\Jobs\\xmldemo"
+      F29 "0"
+      F30 "0"
+      F31 "2021-09-02 12:15:34"
+      F32 "3"
+      F34 "0\V1\VLINUX\V0\V\V#DSProjectARTOptions#\V1251\V\V\V\V\V\V0\V0"
+      F35 "Sequential_File_0\VJava_Integration_3"
+      F36 "optim-engine.local"
+      F37 "dstage1"
+      F38 "0"
+      F39 "xmldemo2.Sequential_File_0\Vxmldemo2.Java_Integration_3"
+      F41 "0"
+      F43 ",,,,"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "xmldemo2.Java_Integration_3"
+      F1 "STAGE"
+      F2 "CUSTOM"
+      F3 "11.7///60/C"
+      F4 "xmldemo2"
+      F9 "xmldemo2.Sequential_File_0.DSLink2"
+      F13 "VariantName\VVariantLibrary\VVariantVersion\VSupportedVariants\VSupportedVariantsLibraries\VSupportedVariantsVersions\VOrientation\VRejectFromLink\VRejectThreshold\VRejectNumber\VRejectUsesPercentage\VConnectorName\VEngine\VContext\VConnectionString\VUsername\VPassword\VClasspath\VConnectorClasspath\VXMLProperties"
+      F14 "1.6\V\"java:com/ibm/is/cc/javastage/connector/CC_JavaConnectorLibrary,$(DSHOME)/../DSComponents/bin/ccjava-api.jar;$(DSHOME)/../DSComponents/bin/ccjava.jar;$(DSHOME)\"\V1.0\VV1;1.6::\"java:com/ibm/is/cc/javastage/connector/CC_JavaConnectorLibrary,$(DSHOME)/../DSComponents/bin/ccjava-api.jar;$(DSHOME)/../DSComponents/bin/ccjava.jar;$(DSHOME)\"\V\"java:com/ibm/is/cc/javastage/connector/CC_JavaConnectorLibrary,$(DSHOME)/../DSComponents/bin/ccjava-api.jar;$(DSHOME)/../DSComponents/bin/ccjava.jar;$(DSHOME)\"\V1.0\Vstage\V-1\V0\V0\Vfalse\VJavaStage\VEE\Vtarget\V/Connection/Reserved\V/Connection/Reserved\V/Connection/Reserved\V/Usage/Java/Classpath\V/Usage/Java/ConnectorClasspath\V<?xml version='1.0' encoding='UTF-16'?><Properties version='1.1'><Common><Context type='int'>2</Context><Variant type='string'>1.6</Variant><DescriptorVersion type='string'>1.0</DescriptorVersion><PartitionType type='int'>-1</PartitionType><RCP type='int'>0</RCP></Common><Usage><Java><Classpath modified='1' type='string'><![CDATA[#FILE_JAR#]]></Classpath><HeapSize modified='1' type='int'><![CDATA[512]]></HeapSize><ConnectorClasspath type='string'><![CDATA[$(DSHOME)/../DSComponents/bin/ccjava-api.jar;$(DSHOME)/../DSComponents/bin/ccjava.jar]]></ConnectorClasspath><OtherOptions modified='1' type='string'><![CDATA[-Xdump:none]]></OtherOptions><ConnectorOtherOptions type='string'><![CDATA[-Dcom.ibm.tools.attach.enable=no -Dcom.ibm.is.cc.options=noisfjars]]></ConnectorOtherOptions></Java><UserClassName modified='1' type='string'><![CDATA[xmldemo2.XmlDemo2]]></UserClassName><UserDefinedFunction collapsed='1' type='bool'><![CDATA[0]]></UserDefinedFunction><CustomProperties modified='1' type='string'><![CDATA[OUT_FILE=#FILE_OUT#]]></CustomProperties></Usage></Properties >"
+      F16 "JavaStagePX"
+      F23 "0\V0\V0\V0\V0\V0\V0\V2\V2\V2\V11\V0\V0\V0\V0\V0\V1\V0\V0\V0"
+      F31 "xmldemo2.Java_Integration_3"
+      F32 "-1.-1"
+      F40 "0"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "xmldemo2.Sequential_File_0"
+      F1 "STAGE"
+      F2 "CUSTOM"
+      F3 "11.7///60/C"
+      F4 "xmldemo2"
+      F10 "xmldemo2.Sequential_File_0.DSLink2"
+      F16 "PxSequentialFile"
+      F31 "xmldemo2.Sequential_File_0"
+      F32 "-1.-1"
+      F40 "1"
+   END DSRECORD
+   BEGIN DSRECORD
+      Identifier "xmldemo2.Sequential_File_0.DSLink2"
+      F1 "OUTPIN"
+      F3 "11.7///60/C"
+      F5 "3"
+      F16 "xmldemo2.Sequential_File_0\Vxmldemo2.Java_Integration_3"
+      F21 "a\Vb\Vc"
+      F22 "0\V0\V0"
+      F25 "-5\V12\V3"
+      F26 "0\V200\V10"
+      F27 "0\V0\V2"
+      F28 "0\V0\V0"
+      F29 "/Record/@a\V/Record/text\V/Record/@c"
+      F39 "DSLink2"
+      F40 "0\V0\V1"
+      F50 "\V"
+   END DSRECORD
+   COMMENT No program sources in executable job
+   COMMENT No program binaries in executable job
+   BEGIN DSSCRIPT
+      Identifier "OshExecuter.sh"
+      TERMINATOR =+=+=+=
+#!/bin/sh
+# Shell script for Datastage to execute an osh script, generated at 2021-09-02 12:15:34
+# Compiler runtime stamp 11.7///60/C
+#
+# Parameters:
+# $1 - Run indicator: R=normal run, P=performance wrappered run
+# $2 - Environment variable file name - dummy
+# $3... - Osh / performance checker command line arguments
+RunIndicator=$1
+DummyEnv=$2
+shift
+shift
+if test ! -x "$APT_ORCHHOME/bin/osh"
+  then echo '##OSHRETVAL NOOSH'
+  exit 1
+fi
+# Test for resource estimation option.
+if test $RunIndicator = P
+  then $APT_ORCHHOME/bin/orchresest "$@" 2>&1 &
+  else $APT_ORCHHOME/bin/osh "$@" 2>&1 &
+fi
+oshpid=$!
+# Write the pid of the conductor process
+echo '##OSHPID' $oshpid
+wait $oshpid
+oshcode=$?
+oshdir=`dirname $0`
+# Write the terminating string
+echo '##OSHRETVAL' $oshcode > $oshdir/../RT_SCTEMP/$oshpid.retval
+echo '##OSHRETVAL' $oshcode
+# end of script
+=+=+=+=
+   END DSSCRIPT
+   BEGIN DSSCRIPT
+      Identifier "OshScript.osh"
+      TERMINATOR =+=+=+=
+# OSH / orchestrate script for Job xmldemo2 compiled at 12:15:34 02 Sep 2021
+#################################################################
+#### STAGE: Sequential_File_0
+## Operator
+import
+## Operator options
+-schema record
+  {final_delim=end, delim=',', null_field='', quote=double}
+(
+  a:int64;
+  b:string[max=200];
+  c:nullable decimal[10,2];
+)
+-rejects continue
+-reportProgress yes
+-file  '[&"FILE_IN"]'
+## General options
+[ident('Sequential_File_0'); jobmon_ident('Sequential_File_0')]
+## Outputs
+0> [] 'Sequential_File_0:DSLink2.v'
+;
+#################################################################
+#### STAGE: Java_Integration_3
+## Operator
+pxbridge
+## Operator options
+-Orientation stage
+-XMLProperties '<?xml version=\\'1.0\\' encoding=\\'UTF-16\\'?><Properties version=\\'1.1\\'><Common><Context type=\\'int\\'>2</Context><Variant type=\\'string\\'>1.6</Variant><DescriptorVersion type=\\'string\\'>1.0</DescriptorVersion><PartitionType type=\\'int\\'>-1</PartitionType><RCP type=\\'int\\'>0</RCP></Common><Usage><Java><Classpath modified=\\'1\\' type=\\'string\\'><![CDATA[[&"FILE_JAR"]]]></Classpath><HeapSize modified=\\'1\\' type=\\'int\\'><![CDATA[512]]></HeapSize><ConnectorClasspath type=\\'string\\'><![CDATA[$(DSHOME)/../DSComponents/bin/ccjava-api.jar;$(DSHOME)/../DSComponents/bin/ccjava.jar]]></ConnectorClasspath><OtherOptions modified=\\'1\\' type=\\'string\\'><![CDATA[-Xdump:none]]></OtherOptions><ConnectorOtherOptions type=\\'string\\'><![CDATA[-Dcom.ibm.tools.attach.enable=no -Dcom.ibm.is.cc.options=noisfjars]]></ConnectorOtherOptions></Java><UserClassName modified=\\'1\\' type=\\'string\\'><![CDATA[xmldemo2.XmlDemo2]]></UserClassName><UserDefinedFunction collapsed=\\'1\\' type=\\'bool\\'><![CDATA[0]]></UserDefinedFunction><CustomProperties modified=\\'1\\' type=\\'string\\'><![CDATA[OUT_FILE=[&"FILE_OUT"]]]></CustomProperties></Usage></Properties >'
+-connector '{
+   variant=\\'1.6\\', 
+   library="java:com/ibm/is/cc/javastage/connector/CC_JavaConnectorLibrary,$(DSHOME)/../DSComponents/bin/ccjava-api.jar;$(DSHOME)/../DSComponents/bin/ccjava.jar;$(DSHOME)", 
+   version=1.0, 
+   variantlist=\\'V1;1.6::"java:com/ibm/is/cc/javastage/connector/CC_JavaConnectorLibrary,$(DSHOME)/../DSComponents/bin/ccjava-api.jar;$(DSHOME)/../DSComponents/bin/ccjava.jar;$(DSHOME)"\\', 
+   versionlist=\\'1.0\\', 
+   name=JavaStage
+}'
+-linkXMLProperties target 0 '<?xml version=\\'1.0\\' encoding=\\'UTF-16\\'?><Properties version=\\'1.1\\'><Common><Context type=\\'int\\'>2</Context><Variant type=\\'string\\'>1.6</Variant><DescriptorVersion type=\\'string\\'>1.0</DescriptorVersion><PartitionType type=\\'int\\'>2</PartitionType><RCP type=\\'int\\'>0</RCP><Reject></Reject></Common><Usage></Usage></Properties >'
+-target 0 '{
+      DSDescription={a=\\'\\/Record\\/\\@a\\', b=\\'\\/Record\\/text\\', c=\\'\\/Record\\/\\@c\\'}, 
+      DSSQLType={a=-5, b=12, c=3}, 
+      DSSQLPrecision={b=200, c=10}, 
+      DSSQLScale={c=2}, 
+      DSSchema=\\'record
+         (
+           a\\:int64\\;
+           b\\:string\\[max\\=200\\]\\;
+           c\\:nullable decimal\\[10\\,2\\]\\;
+         )\\'
+}'
+   
+## General options
+[ident('Java_Integration_3'); jobmon_ident('Java_Integration_3'); seq]
+## Inputs
+0< [] 'Sequential_File_0:DSLink2.v'
+;
+# End of OSH code
+=+=+=+=
+   END DSSCRIPT
+END DSEXECJOB
